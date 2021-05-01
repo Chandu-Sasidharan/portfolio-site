@@ -21,7 +21,7 @@ export const Navigation = styled.nav`
 		[hom-start] 1fr [hom-end] repeat(4, [col-start] min-content [col-end])
 		[ mor-start] 1.5fr [mor-end];
 
-	@media screen and (max-width: 50rem) {
+	@media screen and (max-width: 50em) {
 		grid-template-columns:
 			[hom-start] minmax(min-content, 1fr) [hom-end mor-start] minmax(
 				min-content,
@@ -69,7 +69,7 @@ export const NavItem = styled(LinkS)`
 		font-weight: bold;
 	}
 
-	@media screen and (max-width: 50rem) {
+	@media screen and (max-width: 50em) {
 		display: none;
 	}
 `;
@@ -81,7 +81,7 @@ export const NavBtnWrapper = styled.div`
 	justify-self: flex-end;
 	margin-right: 2rem;
 
-	@media screen and (max-width: 50rem) {
+	@media screen and (max-width: 50em) {
 		display: none;
 	}
 `;
@@ -107,7 +107,7 @@ export const NavBtn = styled(LinkR)`
 export const MobileIcon = styled.div`
 	display: none;
 
-	@media screen and (max-width: 50rem) {
+	@media screen and (max-width: 50em) {
 		display: grid;
 		grid-column: mor-start / mor-end;
 		height: 8rem;
