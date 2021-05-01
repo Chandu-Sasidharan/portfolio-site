@@ -7,11 +7,12 @@ function ApodData() {
 	useEffect(() => {
 		async function ApodObject() {
 			const apodobject = await axios(
-				`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_APOD_API_KEY}`
+				`http://localhost:8000/apod`
+				// `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_APOD_API_KEY}`
 			);
-
-			let img_obj = apodobject.data.valueOf();
+			let img_obj = apodobject.data.valueOf()[0];
 			let date = img_obj["date"].split("-");
+			// let date = img_obj["date"].split("-");
 			let month = null;
 			switch (date[1]) {
 				case "01":

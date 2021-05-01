@@ -39,8 +39,6 @@ const Navbar = ({ toggle }) => {
 		};
 	}, []);
 
-	console.log(offset);
-
 	return (
 		<>
 			<IconContext.Provider value={{ color: "#fff" }}>
