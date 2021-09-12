@@ -39,7 +39,7 @@ export const LandingPageContent = styled.div`
   justify-self: center;
   align-items: center;
   justify-items: flex-start;
-  background-color: rgba(200, 200, 200, 0.1);
+  background-color: rgba(0, 0, 0, 0.4);
   box-shadow: 0 0 0.5rem 0.25rem rgba(0, 0, 0, 0.3);
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
@@ -51,7 +51,7 @@ export const Date = styled.div`
   font-size: 3.5rem;
   padding-left: 3rem;
   padding-top: 1.2rem;
-  text-shadow: 0rem 0rem 1.5rem rgba(0, 0, 0, 0.9);
+  text-shadow: 0rem 0rem 1.5rem rgba(0, 0, 0, 0.7);
 `;
 
 export const SubHeading = styled.div`
@@ -59,14 +59,14 @@ export const SubHeading = styled.div`
   font-size: 2rem;
   padding-left: 3rem;
   padding-bottom: 1rem;
-  text-shadow: 0rem 0rem 1.5rem rgba(0, 0, 0, 0.9);
+  text-shadow: 0rem 0rem 1.5rem rgba(0, 0, 0, 0.7);
 `;
 
 export const Title = styled.div`
   color: #bbb;
   font-size: 2.5rem;
   padding-left: 3rem;
-  text-shadow: 0rem 0rem 1.5rem rgba(0, 0, 0, 0.9);
+  text-shadow: 0rem 0rem 1.5rem rgba(0, 0, 0, 0.7);
 
   @media screen and (max-width: 50rem) {
     font-size: 2.5rem;
@@ -76,7 +76,7 @@ export const Title = styled.div`
 export const DescriptionWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr min-content;
-  text-shadow: 0rem 0rem 1.5rem rgba(0, 0, 0, 0.9);
+  text-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.7);
   overflow: hidden;
   padding: 0 3rem;
   height: ${(props) => (props.descWrapperOpen ? 'min-content' : '3rem')};
