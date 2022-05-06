@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { FaBars } from "react-icons/fa";
-import { IconContext } from "react-icons/lib";
-import { animateScroll as scroll } from "react-scroll";
-import { Navigation, NavLogo, NavItem, MobileIcon } from "./navbarStyles";
+import React, { useState, useEffect } from 'react';
+import { FaBars } from 'react-icons/fa';
+import { IconContext } from 'react-icons/lib';
+import { animateScroll as scroll } from 'react-scroll';
+import { Navigation, NavLogo, NavItem, MobileIcon } from './navbarStyles';
 
 const Navbar = ({ toggle }) => {
   const [iftransparent, setifTransparent] = useState(true);
@@ -21,20 +21,20 @@ const Navbar = ({ toggle }) => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", Scrolling);
+    window.addEventListener('scroll', Scrolling);
     const computedFontSize = parseFloat(
-      window.getComputedStyle(document.body).getPropertyValue("font-size")
+      window.getComputedStyle(document.body).getPropertyValue('font-size')
     );
     setOffset(computedFontSize * -6);
 
     return () => {
-      window.removeEventListener("scroll", Scrolling);
+      window.removeEventListener('scroll', Scrolling);
     };
   }, []);
 
   return (
     <>
-      <IconContext.Provider value={{ color: "#fff" }}>
+      <IconContext.Provider value={{ color: '#fff' }}>
         <Navigation id="navigation" $iftransparent={iftransparent}>
           <NavLogo onClick={goToHome} to="/">
             Home
