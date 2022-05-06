@@ -25,7 +25,7 @@ const Navbar = ({ toggle }) => {
     const computedFontSize = parseFloat(
       window.getComputedStyle(document.body).getPropertyValue('font-size')
     );
-    setOffset(computedFontSize * -6);
+    setOffset(computedFontSize * -8);
 
     return () => {
       window.removeEventListener('scroll', Scrolling);

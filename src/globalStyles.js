@@ -22,6 +22,11 @@ const GlobalStyles = createGlobalStyle`
 	    color: #fff;
     }
 
+    ::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+    }
+
     html {
         font-size: 62.5%; //fallback
 	    font-size: ${fontsize};

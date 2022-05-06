@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Link as LinkS } from 'react-scroll';
-import { Link as LinkR } from 'react-router-dom';
 import { FaTimes } from 'react-icons/fa';
 
 export const SidebarContainer = styled.div`
@@ -11,14 +10,11 @@ export const SidebarContainer = styled.div`
   background: #f9f9f9;
   width: 100vw;
   min-height: 100vh;
-  transition: 0.3s ease-in-out;
   opacity: ${({ isOpen }) => (isOpen ? '100%' : '0')};
-  /* top: ${({ isOpen }) => (isOpen ? '0' : '-100%')}; */
 `;
 
 export const SidebarMenu = styled.div`
   display: grid;
-  /* width: 100%; */
   align-items: center;
   justify-items: center;
   grid-template-columns: 1fr;
@@ -32,6 +28,11 @@ export const CloseIcon = styled(FaTimes)`
   margin-right: 4rem;
   color: #777;
   font-size: 2.8rem;
+  cursor: pointer;
+
+  &:active {
+    color: #ff7043;
+  }
 `;
 
 export const SidebarLink = styled(LinkS)`
@@ -41,23 +42,9 @@ export const SidebarLink = styled(LinkS)`
   transition: 0.2s ease-in-out;
   text-decoration: none;
   color: #777;
+  cursor: pointer;
 
-  &:hover {
-    cursor: pointer;
-    color: #ff7043;
-  }
-`;
-
-export const MoreLink = styled(LinkR)`
-  display: grid;
-  font-size: 2.5rem;
-  font-weight: bold;
-  transition: 0.2s ease-in-out;
-  text-decoration: none;
-  color: #777;
-
-  &:hover {
-    cursor: pointer;
+  &:active {
     color: #ff7043;
   }
 `;

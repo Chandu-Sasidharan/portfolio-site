@@ -1,35 +1,33 @@
 import { Link as LinkS } from 'react-scroll';
-import { Link as LinkR } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Navigation = styled.nav`
   background: ${({ $iftransparent }) =>
-    $iftransparent
-      ? 'rgba(0, 0, 0, 0.2)'
-      : '#FF7043'}; //FF7043 previous color
+    $iftransparent ? 'rgba(0, 0, 0, 0.2)' : '#FF7043'};
   transition: all 0.3s;
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
   z-index: 10;
   height: 8rem;
   margin-top: -8rem;
+  padding-right: 4rem;
   position: sticky;
   top: 0;
   font-size: 2rem;
   display: grid;
   grid-column-gap: 5rem;
   justify-items: center;
-  /* align-items: center; */
-  grid-template-columns:
-    [hom-start] 1fr [hom-end] repeat(4, [col-start] min-content [col-end])
-    [ mor-start] min-content [mor-end];
+  grid-template-columns: [hom-start] 1fr [hom-end] repeat(
+      4,
+      [col-start] min-content [col-end]
+    );
 
   @media screen and (max-width: 50em) {
     grid-template-columns:
-      [hom-start] minmax(min-content, 1fr) [hom-end mor-start] minmax(
+      [hom-start] minmax(min-content, 1fr) [hom-end mobIcon-start] minmax(
         min-content,
         1fr
       )
-      [mor-end];
+      [mobIcon-end];
     grid-column-gap: 0;
   }
 `;
@@ -76,45 +74,15 @@ export const NavItem = styled(LinkS)`
   }
 `;
 
-export const NavBtnWrapper = styled.div`
-  display: grid;
-  height: 8rem;
-  align-items: center;
-  justify-self: flex-end;
-  margin-right: 2rem;
-
-  @media screen and (max-width: 50em) {
-    display: none;
-  }
-`;
-
-export const NavBtn = styled(LinkR)`
-  background: transparent;
-  border-radius: 1rem;
-  padding: 0.5rem 3rem;
-  color: #fff;
-  font-size: 2.5rem;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.3s;
-
-  &:hover {
-    border-bottom: 1px solid white;
-    border-top: 1px solid white;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 0.8rem;
-  }
-`;
-
 export const MobileIcon = styled.div`
   display: none;
 
   @media screen and (max-width: 50em) {
     display: grid;
-    grid-column: mor-start / mor-end;
+    grid-column: mobIcon-start / mobIcon-end;
     align-items: center;
     justify-self: flex-end;
-    margin-right: 4rem;
     font-size: 2.8rem;
+    cursor: pointer;
   }
 `;
