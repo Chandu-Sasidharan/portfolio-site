@@ -1,4 +1,5 @@
 import React from 'react';
+import useScrollOffset from '../../utils/useScrollOffset';
 import {
   SidebarContainer,
   CloseIcon,
@@ -7,6 +8,8 @@ import {
 } from './sidebarStyles';
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
+  const offset = useScrollOffset();
+
   return (
     <SidebarContainer
       id="sidebarContainer"
@@ -21,7 +24,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           smooth={true}
           duration={500}
           spy={true}
-          offset={-80}
+          offset={offset}
         >
           About
         </SidebarLink>
@@ -31,7 +34,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           smooth={true}
           duration={500}
           spy={true}
-          offset={-80}
+          offset={offset}
         >
           Portfolio
         </SidebarLink>
@@ -41,7 +44,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           smooth={true}
           duration={500}
           spy={true}
-          offset={-80}
+          offset={offset}
         >
           Canvas
         </SidebarLink>
@@ -51,7 +54,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           smooth={true}
           duration={500}
           spy={true}
-          offset={-80}
+          offset={offset}
         >
           Blog
         </SidebarLink>

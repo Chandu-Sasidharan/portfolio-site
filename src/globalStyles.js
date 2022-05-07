@@ -23,7 +23,8 @@ const GlobalStyles = createGlobalStyle`
     }
 
     ::-webkit-scrollbar {
-    width: 0;  //Remove scrollbar space
+    display: none;
+    width: 0;  //Optional: Remove scrollbar space
     background: transparent;  //Optional: just make scrollbar invisible
     }
 

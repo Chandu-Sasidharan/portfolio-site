@@ -3,10 +3,11 @@ import { FaBars } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
 import { animateScroll as scroll } from 'react-scroll';
 import { Navigation, NavLogo, NavItem, MobileIcon } from './navbarStyles';
+import useScrollOffset from '../../utils/useScrollOffset';
 
 const Navbar = ({ toggleSidebar }) => {
   const [iftransparent, setifTransparent] = useState(true);
-  const [offset, setOffset] = useState(0);
+  const offset = useScrollOffset();
 
   const goToHome = () => {
     scroll.scrollToTop();
@@ -22,10 +23,6 @@ const Navbar = ({ toggleSidebar }) => {
 
   useEffect(() => {
     window.addEventListener('scroll', Scrolling);
-    const computedFontSize = parseFloat(
-      window.getComputedStyle(document.body).getPropertyValue('font-size')
-    );
-    setOffset(computedFontSize * -8);
 
     return () => {
       window.removeEventListener('scroll', Scrolling);
