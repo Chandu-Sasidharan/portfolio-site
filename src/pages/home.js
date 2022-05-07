@@ -11,14 +11,14 @@ import Portfolio from '../components/homePageSections/portfolio';
 
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => {
+  const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
 
   return (
     <>
-      <Navbar toggle={toggle} />
-      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <Navbar toggleSidebar={toggleSidebar} />
+      <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
       <LandingPage />
       <About />
       <Portfolio />

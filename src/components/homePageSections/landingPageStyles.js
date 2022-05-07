@@ -99,17 +99,3 @@ export const ArrowWrapper = styled.div`
   padding-left: 1rem;
   font-size: 2rem;
 `;
-
-// export const ArrowForward = styled(MdArrowForward)`
-// 	color: #bbb;
-// 	padding-left: 3rem;
-// 	font-size: 6rem;
-// `;
-
-// export const VideoBg = styled.video`
-// 	width: 100%;
-// 	height: 100%;
-// 	-o-object-fit: cover;
-// 	object-fit: cover;
-// 	background: #232a34;
-// `;

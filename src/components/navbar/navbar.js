@@ -4,7 +4,7 @@ import { IconContext } from 'react-icons/lib';
 import { animateScroll as scroll } from 'react-scroll';
 import { Navigation, NavLogo, NavItem, MobileIcon } from './navbarStyles';
 
-const Navbar = ({ toggle }) => {
+const Navbar = ({ toggleSidebar }) => {
   const [iftransparent, setifTransparent] = useState(true);
   const [offset, setOffset] = useState(0);
 
@@ -79,7 +79,7 @@ const Navbar = ({ toggle }) => {
           >
             Blog
           </NavItem>
-          <MobileIcon onClick={toggle}>
+          <MobileIcon onClick={toggleSidebar}>
             <FaBars />
           </MobileIcon>
         </Navigation>

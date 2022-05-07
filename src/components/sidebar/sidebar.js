@@ -6,14 +6,18 @@ import {
   SidebarLink
 } from './sidebarStyles';
 
-const Sidebar = ({ isOpen, toggle }) => {
+const Sidebar = ({ isOpen, toggleSidebar }) => {
   return (
-    <SidebarContainer id="sidebarContainer" isOpen={isOpen} onClick={toggle}>
+    <SidebarContainer
+      id="sidebarContainer"
+      isOpen={isOpen}
+      onClick={toggleSidebar}
+    >
       <SidebarMenu id="sidebarMenu">
-        <CloseIcon id="icon-test" onClick={toggle} />
+        <CloseIcon id="icon-test" onClick={toggleSidebar} />
         <SidebarLink
           to="about"
-          onClick={toggle}
+          onClick={toggleSidebar}
           smooth={true}
           duration={500}
           spy={true}
@@ -23,7 +27,7 @@ const Sidebar = ({ isOpen, toggle }) => {
         </SidebarLink>
         <SidebarLink
           to="portfolio"
-          onClick={toggle}
+          onClick={toggleSidebar}
           smooth={true}
           duration={500}
           spy={true}
@@ -33,7 +37,7 @@ const Sidebar = ({ isOpen, toggle }) => {
         </SidebarLink>
         <SidebarLink
           to="canvas"
-          onClick={toggle}
+          onClick={toggleSidebar}
           smooth={true}
           duration={500}
           spy={true}
@@ -43,7 +47,7 @@ const Sidebar = ({ isOpen, toggle }) => {
         </SidebarLink>
         <SidebarLink
           to="blog"
-          onClick={toggle}
+          onClick={toggleSidebar}
           smooth={true}
           duration={500}
           spy={true}
