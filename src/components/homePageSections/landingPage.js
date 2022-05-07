@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
-import ApodData from '../../assets/landingPageData';
+import useApodData from '../../utils/useApodData';
 import ReactPlayer from 'react-player/youtube';
 import {
   LandingPageContainer,
@@ -18,19 +18,21 @@ import {
 
 function LandingPage() {
   const [descWrapperOpen, setdescWrapperOpen] = useState(false);
+  const [imageDisplay, setImageDisplay] = useState(false);
+  const [videoDisplay, setVideoDisplay] = useState(false);
+  const apodObject = useApodData();
+
+  useEffect(() => {
+    if (apodObject['media_type'] === 'image') {
+      setImageDisplay(true);
+    } else if (apodObject['media_type'] === 'video') {
+      setVideoDisplay(true);
+    }
+  }, [apodObject]);
+
   const toggleDescWrapper = () => {
     setdescWrapperOpen(!descWrapperOpen);
   };
-
-  const apod_object = ApodData();
-  let imageDisplay = false;
-  let videoDisplay = false;
-
-  if (apod_object['media_type'] === 'image') {
-    imageDisplay = true;
-  } else if (apod_object['media_type'] === 'video') {
-    videoDisplay = true;
-  }
 
   return (
     <IconContext.Provider value={{ color: '#bbb' }}>
@@ -38,11 +40,11 @@ function LandingPage() {
         <BackgroundImage
           id="backgroundImage"
           imageDisplay={imageDisplay}
-          src={apod_object['url']}
+          src={apodObject['url']}
         />
         <PlayerWrapper id="playerWrapper" videoDisplay={videoDisplay}>
           <ReactPlayer
-            url={apod_object['url']}
+            url={apodObject['url']}
             playing={true}
             loop={true}
             controls={false}
@@ -52,16 +54,16 @@ function LandingPage() {
           />
         </PlayerWrapper>
         <LandingPageContent id="landingPageContent">
-          <Date id="date">{apod_object['formatted_date']}</Date>
+          <Date id="date">{apodObject['formatted_date']}</Date>
           <SubHeading id="subHeading">Astronomy Picture of the Day</SubHeading>
-          <Title id="title">{apod_object['title']}</Title>
+          <Title id="title">{apodObject['title']}</Title>
           <DescriptionWrapper
             id="descriptionWrapper"
             onClick={toggleDescWrapper}
             descWrapperOpen={descWrapperOpen}
           >
             <Description id="description">
-              {apod_object['explanation']}
+              {apodObject['explanation']}
             </Description>
             <ArrowWrapper descWrapperOpen={!descWrapperOpen}>
               <FaAngleUp />
