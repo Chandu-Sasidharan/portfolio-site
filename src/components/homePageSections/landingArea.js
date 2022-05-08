@@ -4,19 +4,19 @@ import { IconContext } from 'react-icons/lib';
 import useApodData from '../../utils/useApodData';
 import ReactPlayer from 'react-player/youtube';
 import {
-  LandingPageContainer,
+  LandingAreaContainer,
   BackgroundImage,
   PlayerWrapper,
-  LandingPageContent,
+  LandingAreaContent,
   Date,
   SubHeading,
   Title,
   DescriptionWrapper,
   Description,
   ArrowWrapper
-} from './landingPageStyles';
+} from './landingAreaStyles';
 
-function LandingPage() {
+function LandingArea() {
   const [descWrapperOpen, setdescWrapperOpen] = useState(false);
   const [imageDisplay, setImageDisplay] = useState(false);
   const [videoDisplay, setVideoDisplay] = useState(false);
@@ -36,7 +36,7 @@ function LandingPage() {
 
   return (
     <IconContext.Provider value={{ color: '#bbb' }}>
-      <LandingPageContainer id="home" descWrapperOpen={descWrapperOpen}>
+      <LandingAreaContainer id="home" descWrapperOpen={descWrapperOpen}>
         <BackgroundImage
           id="backgroundImage"
           imageDisplay={imageDisplay}
@@ -53,7 +53,7 @@ function LandingPage() {
             muted={true}
           />
         </PlayerWrapper>
-        <LandingPageContent id="landingPageContent">
+        <LandingAreaContent id="landingAreaContent">
           <Date id="date">{apodObject['formatted_date']}</Date>
           <SubHeading id="subHeading">Astronomy Picture of the Day</SubHeading>
           <Title id="title">{apodObject['title']}</Title>
@@ -72,10 +72,10 @@ function LandingPage() {
               <FaAngleDown />
             </ArrowWrapper>
           </DescriptionWrapper>
-        </LandingPageContent>
-      </LandingPageContainer>
+        </LandingAreaContent>
+      </LandingAreaContainer>
     </IconContext.Provider>
   );
 }
 
-export default LandingPage;
+export default LandingArea;

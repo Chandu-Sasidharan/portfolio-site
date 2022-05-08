@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const LandingPageContainer = styled.div`
+export const LandingAreaContainer = styled.div`
   display: grid;
   grid-template-rows: minmax(100vh, min-content);
   position: relative;
@@ -30,7 +30,7 @@ export const PlayerWrapper = styled.div`
   z-index: -5;
 `;
 
-export const LandingPageContent = styled.div`
+export const LandingAreaContent = styled.div`
   display: grid;
   width: 90vw;
   margin-top: 12rem;

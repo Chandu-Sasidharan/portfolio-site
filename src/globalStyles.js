@@ -10,6 +10,7 @@ const GlobalStyles = createGlobalStyle`
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Ubuntu', 'Roboto', sans-serif;
+    scrollbar-width: none; // hide scrollbar in firefox
     }
 
     body {

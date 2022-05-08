@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from '../components/navbar/navbar';
 import Sidebar from '../components/sidebar/sidebar';
-import LandingPage from '../components/homePageSections/landingPage';
+import LandingArea from '../components/homePageSections/landingArea';
 import Footer from '../components/footer/footer';
 import About from '../components/homePageSections/aboutSection';
 import { canvasSectionData, blogSectionData } from '../assets/sectionData';
@@ -19,7 +19,7 @@ function Home() {
     <>
       <Navbar toggleSidebar={toggleSidebar} />
       <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
-      <LandingPage />
+      <LandingArea />
       <About />
       <Portfolio />
       <CanvasSection {...canvasSectionData} />
