@@ -5,15 +5,20 @@ import { createGlobalStyle } from 'styled-components';
 let fontsize = 'calc(0.2vw + 0.3vh + 0.3rem)';
 
 const GlobalStyles = createGlobalStyle`
-    * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'Ubuntu', 'Roboto', sans-serif;
-    scrollbar-width: none; // hide scrollbar in firefox
+    *, *::before, *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scrollbar-width: none; // hide scrollbar in firefox
     }
 
+    html {
+        font-size: 62.5%; //fallback
+        font-size: ${fontsize};
+    }
+  
     body {
+        font-family: 'Ubuntu', 'Roboto', sans-serif;
         line-height: 1.6;
         font-weight: 300;
     }
@@ -24,15 +29,10 @@ const GlobalStyles = createGlobalStyle`
     }
 
     ::-webkit-scrollbar {
-    display: none;
-    width: 0;  //Optional: Remove scrollbar space
-    background: transparent;  //Optional: just make scrollbar invisible
+        display: none;
+        width: 0;  //Optional: Remove scrollbar space
+        background: transparent;  //Optional: just make scrollbar invisible
     }
-
-    html {
-        font-size: 62.5%; //fallback
-	    font-size: ${fontsize};
-	}
 `;
 
 export default GlobalStyles;
