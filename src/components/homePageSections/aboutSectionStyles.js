@@ -100,10 +100,12 @@ export const IconLink = styled.a`
 
   transition: all 0.1s ease-in-out;
 
-  &:hover {
+  &:hover,
+  &:focus {
     transform: scale(1.2);
     cursor: pointer;
     color: #ff7043;
+    outline: none;
   }
 `;
 
