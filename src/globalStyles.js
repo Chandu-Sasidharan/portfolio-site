@@ -18,9 +18,8 @@ const GlobalStyles = createGlobalStyle`
     }
   
     body {
-        font-family: 'Ubuntu', 'Roboto', sans-serif;
+        font-family: Ubuntu, Arial, Helvetica, sans-serif;
         line-height: 1.6;
-        font-weight: 300;
     }
 
     ::selection {

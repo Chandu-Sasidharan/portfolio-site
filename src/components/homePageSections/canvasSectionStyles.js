@@ -39,7 +39,7 @@ export const CanvasSectionTextContainer = styled.div`
 
 export const SmallHeading = styled.div`
   font-size: 1.8rem;
-  font-weight: bold;
+  font-weight: 500;
   letter-spacing: 0.2rem;
   text-transform: uppercase;
   color: #01bf71;
@@ -47,7 +47,7 @@ export const SmallHeading = styled.div`
 
 export const MainHeading = styled.div`
   font-size: 4rem;
-  font-weight: bold;
+  font-weight: 500;
   line-height: 1;
 `;
 

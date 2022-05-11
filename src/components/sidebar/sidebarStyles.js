@@ -38,7 +38,7 @@ export const CloseIcon = styled(FaTimes)`
 export const SidebarLink = styled(LinkS)`
   display: grid;
   font-size: 2.5rem;
-  font-weight: bold;
+  font-weight: 500;
   transition: 0.2s ease-in-out;
   text-decoration: none;
   color: #777;

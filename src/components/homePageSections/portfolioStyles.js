@@ -108,7 +108,7 @@ export const Image = styled.img`
 
 export const SmallHeading = styled.div`
   color: #666;
-  font-weight: bold;
+  font-weight: 500;
   letter-spacing: 0.16vw;
   font-size: 1.36vw;
 
