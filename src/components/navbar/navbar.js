@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { throttle } from 'lodash';
 import { FaBars } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
 import { animateScroll as scroll } from 'react-scroll';
@@ -6,38 +7,39 @@ import { Navigation, NavLogo, NavItem, MobileIcon } from './navbarStyles';
 import useScrollOffset from '../../utils/useScrollOffset';
 
 const Navbar = ({ toggleSidebar }) => {
-  const [iftransparent, setifTransparent] = useState(true);
+  const [isTransparent, setIsTransparent] = useState(true);
   const offset = useScrollOffset();
 
   const goToHome = () => {
     scroll.scrollToTop();
   };
 
-  const Scrolling = () => {
-    if (window.pageYOffset > 50) {
-      setifTransparent(false);
+  const handleScroll = () => {
+    if (window.scrollY > 50) {
+      setIsTransparent(false);
     } else {
-      setifTransparent(true);
+      setIsTransparent(true);
     }
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', Scrolling);
+    const throttledHandleScroll = throttle(handleScroll, 100);
+    window.addEventListener('scroll', throttledHandleScroll);
 
     return () => {
-      window.removeEventListener('scroll', Scrolling);
+      return () => window.removeEventListener('scroll', throttledHandleScroll);
     };
   }, []);
 
   return (
     <>
       <IconContext.Provider value={{ color: '#fff' }}>
-        <Navigation id="navigation" $iftransparent={iftransparent}>
+        <Navigation id="navigation" $isTransparent={isTransparent}>
           <NavLogo onClick={goToHome} to="/">
             Home
           </NavLogo>
           <NavItem
-            $iftransparent={iftransparent}
+            $isTransparent={isTransparent}
             to="about"
             smooth={true}
             duration={500}
@@ -47,7 +49,7 @@ const Navbar = ({ toggleSidebar }) => {
             About
           </NavItem>
           <NavItem
-            $iftransparent={iftransparent}
+            $isTransparent={isTransparent}
             to="portfolio"
             smooth={true}
             duration={500}
@@ -57,7 +59,7 @@ const Navbar = ({ toggleSidebar }) => {
             Portfolio
           </NavItem>
           <NavItem
-            $iftransparent={iftransparent}
+            $isTransparent={isTransparent}
             to="canvas"
             smooth={true}
             duration={500}
@@ -67,7 +69,7 @@ const Navbar = ({ toggleSidebar }) => {
             Canvas
           </NavItem>
           <NavItem
-            $iftransparent={iftransparent}
+            $isTransparent={isTransparent}
             to="blog"
             smooth={true}
             duration={500}

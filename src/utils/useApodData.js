@@ -5,16 +5,16 @@ export default function useApodData() {
   const [data, setData] = useState({});
 
   useEffect(() => {
-    const getApotData = async () => {
+    const getApodData = async () => {
       try {
-        const apodObject = await axios(
+        const response = await axios(
           `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_APOD_API_KEY}`
         );
-        let apodData = apodObject.data;
+        let apodData = response.data;
 
-        let date = apodData['date'].split('-');
-        let month = null;
-        switch (date[1]) {
+        let dateParts = apodData['date'].split('-');
+        let month;
+        switch (dateParts[1]) {
           case '01':
             month = 'January';
             break;
@@ -22,7 +22,6 @@ export default function useApodData() {
             month = 'February';
             break;
           case '03':
-            console.log('result:', apodObject);
             month = 'March';
             break;
           case '04':
@@ -56,16 +55,15 @@ export default function useApodData() {
             month = null;
             break;
         }
-        let formatted_date = month;
-        formatted_date = formatted_date.concat(' ', date[2], ', ', date[0]);
-        apodData = { ...apodData, formatted_date: formatted_date };
+        let formatted_date = month.concat(' ', dateParts[2], ', ', dateParts[0]);
+        apodData = { ...apodData, formatted_date };
 
         setData(apodData);
-      } catch (err) {
-        setData({});
+      } catch (error) {
+        console.log("Error Fecthing Data", error);
       }
     };
-    getApotData();
+    getApodData();
   }, []);
 
   return data;

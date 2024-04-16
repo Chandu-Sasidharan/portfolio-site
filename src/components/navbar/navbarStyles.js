@@ -2,8 +2,8 @@ import { Link as LinkS } from 'react-scroll';
 import styled from 'styled-components';
 
 export const Navigation = styled.nav`
-  background: ${({ $iftransparent }) =>
-    $iftransparent ? 'rgba(0, 0, 0, 0.2)' : '#FF7043'};
+  background: ${({ $isTransparent }) =>
+    $isTransparent ? 'rgba(0, 0, 0, 0.2)' : '#FF7043'};
   transition: all 0.3s;
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
   z-index: 10;
@@ -66,7 +66,7 @@ export const NavItem = styled(LinkS)`
   }
 
   &:hover {
-    color: ${(props) => (props.$iftransparent ? '#FF7043' : '#4f4f4f')};
+    color: ${(props) => (props.$isTransparent ? '#FF7043' : '#4f4f4f')};
   }
 
   @media screen and (max-width: 50em) {
