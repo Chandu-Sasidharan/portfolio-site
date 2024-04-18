@@ -1,4 +1,4 @@
-import profile_pic from './images/profile.jpg';
+import profile_pic from './images/profile-picture.jpg';
 import photography_svg from './images/photography.svg';
 import blog_svg from './images/blog.svg';
 
