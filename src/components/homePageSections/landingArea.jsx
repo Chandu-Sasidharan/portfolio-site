@@ -36,13 +36,16 @@ function LandingArea() {
 
   return (
     <IconContext.Provider value={{ color: '#bbb' }}>
-      <LandingAreaContainer id="home" descWrapperOpen={descWrapperOpen}>
+      <LandingAreaContainer id="home" $descWrapperOpen={descWrapperOpen}>
         <BackgroundImage
           id="backgroundImage"
-          imageDisplay={imageDisplay}
+          $imageDisplay={imageDisplay}
           src={apodObject['url']}
         />
-        <PlayerWrapper id="playerWrapper" videoDisplay={videoDisplay}>
+        <PlayerWrapper 
+          id="playerWrapper" 
+          $videoDisplay={videoDisplay}
+        >
           <ReactPlayer
             url={apodObject['url']}
             playing={true}
@@ -60,15 +63,15 @@ function LandingArea() {
           <DescriptionWrapper
             id="descriptionWrapper"
             onClick={toggleDescWrapper}
-            descWrapperOpen={descWrapperOpen}
+            $descWrapperOpen={descWrapperOpen}
           >
             <Description id="description">
               {apodObject['explanation']}
             </Description>
-            <ArrowWrapper descWrapperOpen={!descWrapperOpen}>
+            <ArrowWrapper $descWrapperOpen={!descWrapperOpen}>
               <FaAngleUp />
             </ArrowWrapper>
-            <ArrowWrapper descWrapperOpen={descWrapperOpen}>
+            <ArrowWrapper $descWrapperOpen={descWrapperOpen}>
               <FaAngleDown />
             </ArrowWrapper>
           </DescriptionWrapper>

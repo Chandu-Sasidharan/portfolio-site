@@ -23,7 +23,7 @@ const About = () => {
         <AboutContentWrapper>
           <AboutContentTopSection id="aboutContentTopSection">
             <Image id="profilepic" src={image} alt="Profile Picture"></Image>
-            <Name ontopsection={true} id="nameOnTop">
+            <Name $ontopsection={true} id="nameOnTop">
               {name}
             </Name>
           </AboutContentTopSection>
@@ -62,7 +62,7 @@ const About = () => {
                 <FaInstagram />
               </IconLink>
             </SocialMediaIcons>
-            <Name ontopsection={false} id="nameOnBottom">
+            <Name $ontopsection={false} id="nameOnBottom">
               {name}
             </Name>
             <Description id="desc">{desc}</Description>

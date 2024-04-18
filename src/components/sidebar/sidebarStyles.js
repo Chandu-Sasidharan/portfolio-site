@@ -3,14 +3,14 @@ import { Link as LinkS } from 'react-scroll';
 import { FaTimes } from 'react-icons/fa';
 
 export const SidebarContainer = styled.div`
-  display: ${({ isOpen }) => (isOpen ? 'grid' : 'none')};
+  display: ${({ $isOpen }) => ($isOpen ? 'grid' : 'none')};
   position: fixed;
   top: 0;
   z-index: 99;
   background: #f9f9f9;
   width: 100vw;
   min-height: 100vh;
-  opacity: ${({ isOpen }) => (isOpen ? '100%' : '0')};
+  opacity: ${({ $isOpen }) => ($isOpen ? '100%' : '0')};
 `;
 
 export const SidebarMenu = styled.div`

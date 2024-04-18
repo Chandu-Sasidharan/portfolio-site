@@ -9,7 +9,7 @@ export const LandingAreaContainer = styled.div`
 `;
 
 export const BackgroundImage = styled.img`
-  display: ${(props) => (props.imageDisplay ? 'grid' : 'none')};
+  display: ${({$imageDisplay}) => $imageDisplay ? 'grid' : 'none'};
   width: 100%;
   height: 100%;
   top: 0;
@@ -20,7 +20,7 @@ export const BackgroundImage = styled.img`
 `;
 
 export const PlayerWrapper = styled.div`
-  display: ${(props) => (props.videoDisplay ? 'grid' : 'none')};
+  display: ${({$videoDisplay}) => $videoDisplay ? 'grid' : 'none'};
   justify-self: center;
   align-self: flex-start;
   width: 100vw;
@@ -79,7 +79,7 @@ export const DescriptionWrapper = styled.div`
   text-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.7);
   overflow: hidden;
   padding: 0 3rem;
-  height: ${(props) => (props.descWrapperOpen ? 'min-content' : '3rem')};
+  height: ${({$descWrapperOpen}) => $descWrapperOpen ? 'min-content' : '3rem'};
 
   &:hover {
     cursor: pointer;
@@ -93,7 +93,7 @@ export const Description = styled.div`
 `;
 
 export const ArrowWrapper = styled.div`
-  display: ${(props) => (props.descWrapperOpen ? 'grid' : 'none')};
+  display: ${({$descWrapperOpen}) => $descWrapperOpen ? 'grid' : 'none'};
   align-self: flex-start;
   padding-top: 0.7rem;
   padding-left: 1rem;

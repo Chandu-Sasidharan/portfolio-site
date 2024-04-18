@@ -19,7 +19,7 @@ This was my previous personal portfolio website, which prominently features the 
 - Create a `.env` file in the root directory of the project.
 - Add the following line to the `.env` file to set up your API key:
     ```plaintext
-    REACT_APP_APOD_API_KEY=your_api_key_here
+    VITE_APOD_API_KEY=your_api_key_here
     ```
     Replace `your_api_key_here` with the API key you obtained from the NASA API portal or use `DEMO_KEY`.
 

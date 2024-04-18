@@ -8,7 +8,7 @@ export default function useApodData() {
     const getApodData = async () => {
       try {
         const response = await axios(
-          `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_APOD_API_KEY}`
+          `https://api.nasa.gov/planetary/apod?api_key=${import.meta.env.VITE_APOD_API_KEY}`
         );
         let apodData = response.data;
 

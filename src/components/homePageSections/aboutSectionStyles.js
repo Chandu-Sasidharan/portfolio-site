@@ -43,7 +43,7 @@ export const Image = styled.img`
 `;
 
 export const Name = styled.div`
-  display: ${({ ontopsection }) => (ontopsection ? 'grid' : 'none')};
+  display: ${({ $ontopsection }) => $ontopsection ? 'grid' : 'none'};
   font-size: 4.5rem;
   color: #777;
   grid-column: 3/7;
@@ -51,7 +51,7 @@ export const Name = styled.div`
   justify-self: flex-start;
 
   @media screen and (max-width: 50em) {
-    display: ${({ ontopsection }) => (ontopsection ? 'none' : 'grid')};
+    display: ${({ $ontopsection }) => $ontopsection ? 'none' : 'grid'};
     grid-column: 1/2;
     grid-row: 3/4;
     justify-self: center;

@@ -1,4 +1,3 @@
-import React from 'react';
 import useScrollOffset from '../../utils/useScrollOffset';
 import {
   SidebarContainer,
@@ -13,7 +12,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
   return (
     <SidebarContainer
       id="sidebarContainer"
-      isOpen={isOpen}
+      $isOpen={isOpen}
       onClick={toggleSidebar}
     >
       <SidebarMenu id="sidebarMenu">

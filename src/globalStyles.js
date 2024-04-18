@@ -1,7 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 
-// let fontsize = "calc((1vw + 1vh)/2)";
-// let fontsize = "clamp(40%, (0.5vw + 0.5rem) , 100%)";
 let fontsize = 'calc(0.2vw + 0.3vh + 0.3rem)';
 
 const GlobalStyles = createGlobalStyle`
